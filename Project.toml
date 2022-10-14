@@ -1,0 +1,13 @@
+name = "PhyOperators"
+uuid = "0f95f508-329d-40b9-8c40-172c3a15ed66"
+authors = ["yitan1 <yitam98@gmail.com>"]
+version = "0.1.0"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
