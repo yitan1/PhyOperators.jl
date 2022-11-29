@@ -1,4 +1,4 @@
-export spinmodel
+export spinmodel, rotate_heisenberg
 # spin model 
 
 function spinmodel(g = (1,1,1), h = (0,0,0) ; sitetype = "Spinhalf")
@@ -17,6 +17,17 @@ function spinmodel(g = (1,1,1), h = (0,0,0) ; sitetype = "Spinhalf")
                         hz*(kron(Sz,SI) + kron(SI,Sz))
 
     h
+end
+
+function rotate_heisenberg(; sitetype = "Spinhalf")
+    SI = op("SI", sitetype) 
+    Sx = op("Sx", sitetype)
+    Sy = op("Sy", sitetype)
+    Sz = op("Sz", sitetype)
+
+    h2 = 2*kron(Sz,4*Sx'*Sz*Sx) - 2*kron(Sx,4*Sx'*Sx*Sx) - 2*kron(Sy,4*Sx'*Sy*Sx) |> real
+
+    h2
 end
 
 
